@@ -1,0 +1,10 @@
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\bin\Debug\Space Defenders.exe.config
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\bin\Debug\Space Defenders.exe
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\bin\Debug\Space Defenders.pdb
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\obj\Debug\Space Defenders.csproj.AssemblyReference.cache
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\obj\Debug\Space_Defenders.Form1.resources
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\obj\Debug\Space_Defenders.Properties.Resources.resources
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\obj\Debug\Space Defenders.csproj.GenerateResource.cache
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\obj\Debug\Space Defenders.csproj.CoreCompileInputs.cache
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\obj\Debug\Space Defenders.exe
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\obj\Debug\Space Defenders.pdb
