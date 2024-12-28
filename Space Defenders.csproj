@@ -84,13 +84,13 @@
     <None Include="Resources\bullet.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bullet1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\enemy.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\player.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="enemy-spaceship.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
