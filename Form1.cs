@@ -48,8 +48,75 @@ namespace Space_Defenders
             {
                 player.Left += playerSpeed;
             }
-
             // player movement logic ends
+
+            if (shooting) {
+                bulletSpeed = 20;
+                bullet.Top -= bulletSpeed;
+            }
+            else {
+                bullet.Left = -300;
+                bulletSpeed = 0;
+            }
+
+            if(bullet.Top < -30)
+            {
+                shooting = false;
+            }
+
+            // Bullet Collision Logic
+            if (bullet.Bounds.IntersectsWith(enemyOne.Bounds)) {
+                score++;
+                // This below resets enemyOne and allows the player to shoot again
+                enemyOne.Top = -450;
+                enemyOne.Left = rnd.Next(20, 600);
+                shooting = false ;
+            }
+            if (bullet.Bounds.IntersectsWith(enemyTwo.Bounds))
+            {
+                score++;
+                // This below resets enemyOne and allows the player to shoot again
+                enemyTwo.Top = -650;
+                enemyTwo.Left = rnd.Next(20, 600);
+                shooting = false;
+            }
+            if (bullet.Bounds.IntersectsWith(enemyThree.Bounds))
+            {
+                score++;
+                // This below resets enemyOne and allows the player to shoot again
+                enemyThree.Top = -750;
+                enemyThree.Left = rnd.Next(20, 600);
+                shooting = false;
+            }
+
+
+            if(score == 5)
+            {
+                this.BackColor = Color.MediumSlateBlue; // 1st Transition to Space
+                enemySpeed = 10;
+            }
+            if(score == 10)
+            {
+                enemySpeed = 12;
+                playerSpeed = 15;
+                this.BackColor = Color.DarkSlateBlue; // Second Transition
+                // Fighting SpaceShips!
+                enemyOne.Image = Properties.Resources.enemy_spaceship;
+                enemyTwo.Image = Properties.Resources.enemy_spaceship;
+                enemyThree.Image = Properties.Resources.enemy_spaceship;
+
+            }
+            if (score == 15)
+            {
+                enemySpeed = 15;
+                this.BackColor = Color.MidnightBlue; // Third transition
+            }
+            if (score == 20)
+            {
+                enemySpeed = 18;
+                this.BackColor = Color.Black; // SPACE!
+                txtScore.ForeColor = Color.White;
+            }
         }
 
         private void keyisdown(object sender, KeyEventArgs e)
@@ -68,6 +135,16 @@ namespace Space_Defenders
 
         }
 
+        private void enemyTwo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void keyisup(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
@@ -79,12 +156,19 @@ namespace Space_Defenders
                 goRight = false;
             }
 
-            if(e.KeyCode == Keys.Space && shooting == false)
+            // Start Shooting bullet spot
+            if(e.KeyCode == Keys.Space && !shooting)
             {
                 shooting = true;
 
-                bullet.Top = player.Top;
+                bullet.Top = player.Top - 30;
 
+                bullet.Left = player.Left + (player.Width/2);
+            }
+
+            if (e.KeyCode == Keys.Enter && isGameOver) {
+                resetGame();
+                isGameOver = false;
             }
         }
 
@@ -104,8 +188,14 @@ namespace Space_Defenders
             score = 0;
             bulletSpeed = 0;
             bullet.Left = -300; // Only to spwan when the player shoots
+            shooting = false;
             
             txtScore.Text = score.ToString();
+
+            this.BackColor = Color.Cyan;
+            enemyOne.Image = Properties.Resources.enemy;
+            enemyTwo.Image = Properties.Resources.enemy;
+            enemyThree.Image = Properties.Resources.enemy;
         }
 
         private void gameOver()

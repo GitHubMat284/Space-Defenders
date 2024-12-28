@@ -45,11 +45,11 @@
             // 
             // txtScore
             // 
+            this.txtScore.BackColor = System.Drawing.Color.Transparent;
             this.txtScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScore.Location = new System.Drawing.Point(60, 225);
-            this.txtScore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtScore.Location = new System.Drawing.Point(80, 277);
             this.txtScore.Name = "txtScore";
-            this.txtScore.Size = new System.Drawing.Size(674, 157);
+            this.txtScore.Size = new System.Drawing.Size(899, 193);
             this.txtScore.TabIndex = 5;
             this.txtScore.Text = "0";
             this.txtScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -61,9 +61,10 @@
             // 
             // player
             // 
+            this.player.BackColor = System.Drawing.Color.Transparent;
             this.player.Image = global::Space_Defenders.Properties.Resources.f35_Player;
-            this.player.Location = new System.Drawing.Point(345, 474);
-            this.player.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.player.Location = new System.Drawing.Point(475, 580);
+            this.player.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(104, 150);
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -73,9 +74,10 @@
             // 
             // bullet
             // 
+            this.bullet.BackColor = System.Drawing.Color.Transparent;
             this.bullet.Image = global::Space_Defenders.Properties.Resources.bullet;
-            this.bullet.Location = new System.Drawing.Point(393, 384);
-            this.bullet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bullet.Location = new System.Drawing.Point(524, 473);
+            this.bullet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bullet.Name = "bullet";
             this.bullet.Size = new System.Drawing.Size(7, 27);
             this.bullet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -84,9 +86,10 @@
             // 
             // enemyThree
             // 
+            this.enemyThree.BackColor = System.Drawing.Color.Transparent;
             this.enemyThree.Image = global::Space_Defenders.Properties.Resources.enemy;
-            this.enemyThree.Location = new System.Drawing.Point(634, 36);
-            this.enemyThree.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.enemyThree.Location = new System.Drawing.Point(856, 44);
+            this.enemyThree.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.enemyThree.Name = "enemyThree";
             this.enemyThree.Size = new System.Drawing.Size(100, 85);
             this.enemyThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -95,20 +98,23 @@
             // 
             // enemyTwo
             // 
+            this.enemyTwo.BackColor = System.Drawing.Color.Transparent;
             this.enemyTwo.Image = global::Space_Defenders.Properties.Resources.enemy;
-            this.enemyTwo.Location = new System.Drawing.Point(349, 36);
-            this.enemyTwo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.enemyTwo.Location = new System.Drawing.Point(475, 57);
+            this.enemyTwo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.enemyTwo.Name = "enemyTwo";
             this.enemyTwo.Size = new System.Drawing.Size(100, 85);
             this.enemyTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.enemyTwo.TabIndex = 1;
             this.enemyTwo.TabStop = false;
+            this.enemyTwo.Click += new System.EventHandler(this.enemyTwo_Click);
             // 
             // enemyOne
             // 
+            this.enemyOne.BackColor = System.Drawing.Color.Transparent;
             this.enemyOne.Image = global::Space_Defenders.Properties.Resources.enemy;
-            this.enemyOne.Location = new System.Drawing.Point(47, 36);
-            this.enemyOne.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.enemyOne.Location = new System.Drawing.Point(63, 44);
+            this.enemyOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.enemyOne.Name = "enemyOne";
             this.enemyOne.Size = new System.Drawing.Size(100, 85);
             this.enemyOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -117,19 +123,20 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cyan;
-            this.ClientSize = new System.Drawing.Size(800, 674);
+            this.ClientSize = new System.Drawing.Size(1067, 830);
             this.Controls.Add(this.player);
             this.Controls.Add(this.bullet);
             this.Controls.Add(this.enemyThree);
             this.Controls.Add(this.enemyTwo);
             this.Controls.Add(this.enemyOne);
             this.Controls.Add(this.txtScore);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Space Defenders";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
