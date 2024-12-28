@@ -12,11 +12,11 @@ namespace Space_Defenders
 {
     public partial class Form1 : Form
     {
-        bool goLeft, goRight, shooting, isGameOver;
+        bool goLeft, goRight, shooting, isGameOver, hardcore;
         int score;
         int playerSpeed = 12;
         int highScore = 0;
-        int enemySpeed;
+        int enemySpeed, enemyLeftSpeed = 5;
         int bulletSpeed;
         Random rnd = new Random();
 
@@ -30,17 +30,16 @@ namespace Space_Defenders
         {
             txtScore.Text = score.ToString();
 
-
             enemyOne.Top += enemySpeed;
             enemyTwo.Top += enemySpeed;
             enemyThree.Top += enemySpeed;
 
             if(enemyOne.Top > 710 || enemyTwo.Top > 710 || enemyThree.Top > 710)
             {
-                gameOver();
                 if (score > highScore) { 
                     highScore = score;
                 }
+                gameOver();
             }
 
             // player movement logic starts
@@ -120,6 +119,10 @@ namespace Space_Defenders
                 enemySpeed = 18;
                 this.BackColor = Color.Black; // SPACE!
                 txtScore.ForeColor = Color.White; // Score Visibility
+                txtHighScore.ForeColor = Color.White; // HighScore Visibility
+            }
+            if (score == 30) { 
+                hardcore = true; // Enemy will be able to move left to right soon
             }
         }
 
@@ -193,6 +196,7 @@ namespace Space_Defenders
             bulletSpeed = 0;
             bullet.Left = -300; // Only to spwan when the player shoots
             shooting = false;
+            hardcore = false;  
             
             txtScore.Text = score.ToString();
 
@@ -201,6 +205,8 @@ namespace Space_Defenders
             enemyTwo.Image = Properties.Resources.enemy;
             enemyThree.Image = Properties.Resources.enemy;
             txtScore.ForeColor = Color.Black; // Reset Score Color to Black
+            txtHighScore.ForeColor = Color.Black; // Reset HighScore Color to Black
+            txtHighScore.Left = -300;
         }
 
         private void gameOver()
@@ -208,7 +214,8 @@ namespace Space_Defenders
             isGameOver = true;
             gameTimer.Stop();
             txtScore.Text += Environment.NewLine + "Game Over!" + Environment.NewLine + "Press Enter to try again.";
-
+            txtHighScore.Left = 12; 
+            txtHighScore.Text = "High Score: " + highScore.ToString();
         }
     }
 }
