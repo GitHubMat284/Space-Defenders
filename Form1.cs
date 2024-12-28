@@ -196,6 +196,7 @@ namespace Space_Defenders
             enemyOne.Image = Properties.Resources.enemy;
             enemyTwo.Image = Properties.Resources.enemy;
             enemyThree.Image = Properties.Resources.enemy;
+            txtScore.ForeColor = Color.Black;
         }
 
         private void gameOver()
