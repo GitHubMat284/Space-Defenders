@@ -36,6 +36,7 @@
             this.enemyThree = new System.Windows.Forms.PictureBox();
             this.enemyTwo = new System.Windows.Forms.PictureBox();
             this.enemyOne = new System.Windows.Forms.PictureBox();
+            this.txtHighScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bullet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyThree)).BeginInit();
@@ -88,7 +89,7 @@
             // 
             this.enemyThree.BackColor = System.Drawing.Color.Transparent;
             this.enemyThree.Image = global::Space_Defenders.Properties.Resources.enemy;
-            this.enemyThree.Location = new System.Drawing.Point(856, 44);
+            this.enemyThree.Location = new System.Drawing.Point(859, 57);
             this.enemyThree.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.enemyThree.Name = "enemyThree";
             this.enemyThree.Size = new System.Drawing.Size(100, 85);
@@ -113,7 +114,7 @@
             // 
             this.enemyOne.BackColor = System.Drawing.Color.Transparent;
             this.enemyOne.Image = global::Space_Defenders.Properties.Resources.enemy;
-            this.enemyOne.Location = new System.Drawing.Point(63, 44);
+            this.enemyOne.Location = new System.Drawing.Point(61, 57);
             this.enemyOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.enemyOne.Name = "enemyOne";
             this.enemyOne.Size = new System.Drawing.Size(100, 85);
@@ -121,12 +122,23 @@
             this.enemyOne.TabIndex = 0;
             this.enemyOne.TabStop = false;
             // 
+            // txtHighScore
+            // 
+            this.txtHighScore.BackColor = System.Drawing.Color.Transparent;
+            this.txtHighScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHighScore.Location = new System.Drawing.Point(12, 759);
+            this.txtHighScore.Name = "txtHighScore";
+            this.txtHighScore.Size = new System.Drawing.Size(265, 52);
+            this.txtHighScore.TabIndex = 7;
+            this.txtHighScore.Text = "High Score:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cyan;
             this.ClientSize = new System.Drawing.Size(1067, 830);
+            this.Controls.Add(this.txtHighScore);
             this.Controls.Add(this.player);
             this.Controls.Add(this.bullet);
             this.Controls.Add(this.enemyThree);
@@ -158,6 +170,7 @@
         private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.Label txtScore;
         private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.Label txtHighScore;
     }
 }
 

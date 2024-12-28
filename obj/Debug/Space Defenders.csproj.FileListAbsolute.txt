@@ -8,3 +8,8 @@ C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defender
 C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\obj\Debug\Space Defenders.csproj.CoreCompileInputs.cache
 C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\obj\Debug\Space Defenders.exe
 C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\obj\Debug\Space Defenders.pdb
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\bin\Debug\Space Defenders.exe.manifest
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\bin\Debug\Space Defenders.application
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\obj\Debug\Space Defenders.TrustInfo.xml
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\obj\Debug\Space Defenders.exe.manifest
+C:\Users\Matiu\OneDrive\UofM\Term 6 Winter 2025\Personal Projects\Space Defenders\obj\Debug\Space Defenders.application
