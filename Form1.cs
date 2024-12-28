@@ -15,6 +15,7 @@ namespace Space_Defenders
         bool goLeft, goRight, shooting, isGameOver;
         int score;
         int playerSpeed = 12;
+        int highScore = 0;
         int enemySpeed;
         int bulletSpeed;
         Random rnd = new Random();
@@ -37,6 +38,9 @@ namespace Space_Defenders
             if(enemyOne.Top > 710 || enemyTwo.Top > 710 || enemyThree.Top > 710)
             {
                 gameOver();
+                if (score > highScore) { 
+                    highScore = score;
+                }
             }
 
             // player movement logic starts
@@ -115,7 +119,7 @@ namespace Space_Defenders
             {
                 enemySpeed = 18;
                 this.BackColor = Color.Black; // SPACE!
-                txtScore.ForeColor = Color.White;
+                txtScore.ForeColor = Color.White; // Score Visibility
             }
         }
 
@@ -196,7 +200,7 @@ namespace Space_Defenders
             enemyOne.Image = Properties.Resources.enemy;
             enemyTwo.Image = Properties.Resources.enemy;
             enemyThree.Image = Properties.Resources.enemy;
-            txtScore.ForeColor = Color.Black;
+            txtScore.ForeColor = Color.Black; // Reset Score Color to Black
         }
 
         private void gameOver()
