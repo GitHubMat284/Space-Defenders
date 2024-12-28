@@ -39,7 +39,7 @@ namespace Space_Defenders
                 if (score > highScore) { 
                     highScore = score;
                 }
-                gameOver();
+                //gameOver();
             }
 
             // player movement logic starts
@@ -52,6 +52,44 @@ namespace Space_Defenders
                 player.Left += playerSpeed;
             }
             // player movement logic ends
+
+            // enemy movement logic starts
+            if (hardcore)
+            {
+                int leftOrRight = rnd.Next(0, 2); // Try % and increase range, looks glitching movement
+                if (leftOrRight == 0 && enemyOne.Left > 0)
+                {
+                    enemyOne.Left -= enemyLeftSpeed;
+                }
+                if (leftOrRight == 1 && enemyOne.Left < 697)
+                {
+                    enemyOne.Left += enemyLeftSpeed;
+                }
+
+                leftOrRight = rnd.Next(0, 2);
+                if (leftOrRight == 0 && enemyTwo.Left > 0)
+                {
+                    enemyTwo.Left -= enemyLeftSpeed;
+                }
+                if (leftOrRight == 1 && enemyTwo.Left < 697)
+                {
+                    enemyTwo.Left += enemyLeftSpeed;
+                }
+                
+                leftOrRight = rnd.Next(0, 2);
+                if (leftOrRight == 0 && enemyThree.Left > 0)
+                {
+                    enemyThree.Left -= enemyLeftSpeed;
+                }
+                if (leftOrRight == 1 && enemyThree.Left < 697)
+                {
+                    enemyThree.Left += enemyLeftSpeed;
+                }
+            }
+            // enemy movement logic ends
+
+
+
 
             if (shooting) {
                 bulletSpeed = 20;
