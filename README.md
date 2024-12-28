@@ -10,6 +10,7 @@ Welcome to Space Defenders, the ultimate test of your reflexes and tactical prow
 ## Controls
 Move Left/Right: Use the ← and → arrow keys to maneuver your F-35 through enemy fire.<br>
 Shoot: Press the Spacebar to unleash your fighter’s advanced energy cannon and neutralize threats.
+![Game](https://github.com/user-attachments/assets/83d56d8e-c107-4424-888c-ee52232ce693)
 
 NOTE: Windows may promt a security message, feel safe to disregard it. I didn't write a virus ☻
-![Screenshot 2024-12-28 001709](https://github.com/user-attachments/assets/460f1359-667a-489e-8f38-89f6c8f657ea)
+![Screenshot 2024-12-28 001709](https://github.com/user-attachments/assets/68814e5e-d180-4c19-984d-097a775d7977)
