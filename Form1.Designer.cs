@@ -64,14 +64,13 @@
             // 
             this.player.BackColor = System.Drawing.Color.Transparent;
             this.player.Image = global::Space_Defenders.Properties.Resources.f35_Player;
-            this.player.Location = new System.Drawing.Point(475, 580);
+            this.player.Location = new System.Drawing.Point(474, 577);
             this.player.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(104, 150);
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.player.TabIndex = 4;
             this.player.TabStop = false;
-            this.player.Click += new System.EventHandler(this.player_Click);
             // 
             // bullet
             // 
@@ -89,7 +88,7 @@
             // 
             this.enemyThree.BackColor = System.Drawing.Color.Transparent;
             this.enemyThree.Image = global::Space_Defenders.Properties.Resources.enemy;
-            this.enemyThree.Location = new System.Drawing.Point(859, 57);
+            this.enemyThree.Location = new System.Drawing.Point(858, 57);
             this.enemyThree.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.enemyThree.Name = "enemyThree";
             this.enemyThree.Size = new System.Drawing.Size(100, 85);
@@ -101,14 +100,13 @@
             // 
             this.enemyTwo.BackColor = System.Drawing.Color.Transparent;
             this.enemyTwo.Image = global::Space_Defenders.Properties.Resources.enemy;
-            this.enemyTwo.Location = new System.Drawing.Point(475, 57);
+            this.enemyTwo.Location = new System.Drawing.Point(474, 57);
             this.enemyTwo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.enemyTwo.Name = "enemyTwo";
             this.enemyTwo.Size = new System.Drawing.Size(100, 85);
             this.enemyTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.enemyTwo.TabIndex = 1;
             this.enemyTwo.TabStop = false;
-            this.enemyTwo.Click += new System.EventHandler(this.enemyTwo_Click);
             // 
             // enemyOne
             // 
@@ -148,7 +146,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Space Defenders";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();

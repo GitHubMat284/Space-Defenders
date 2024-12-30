@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Space Defenders.exe" size="85968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Space Defenders.exe" size="86480">
       <assemblyIdentity name="Space Defenders" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3JUByTd1IrtE1+0IcGxstHlJuA6ag5AM8Aubgv+Yvd8=</dsig:DigestValue>
+        <dsig:DigestValue>i/zi0eYyvITwGLeyM8zQeXfmYw5Ua99dJjxbg7cfUXo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
