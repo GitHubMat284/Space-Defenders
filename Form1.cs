@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Space_Defenders
@@ -168,6 +162,7 @@ namespace Space_Defenders
                 enemyOne.Image = Properties.Resources.enemy_spaceship;
                 enemyTwo.Image = Properties.Resources.enemy_spaceship;
                 enemyThree.Image = Properties.Resources.enemy_spaceship;
+                bullet.Image = Properties.Resources.energy_bullet;
                 enemyLeftLimit = 547;
 
                 // Transition fix if enemy already spawned is at edge
@@ -263,6 +258,7 @@ namespace Space_Defenders
             enemyOne.Image = Properties.Resources.enemy;
             enemyTwo.Image = Properties.Resources.enemy;
             enemyThree.Image = Properties.Resources.enemy;
+            bullet.Image = Properties.Resources.bullet;
             txtScore.ForeColor = Color.Black; // Reset Score Color to Black
             txtHighScore.ForeColor = Color.Black; // Reset HighScore Color to Black
             txtHighScore.Left = -300;
