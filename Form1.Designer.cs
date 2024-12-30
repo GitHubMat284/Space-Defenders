@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtScore = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.txtHighScore = new System.Windows.Forms.Label();
             this.player = new System.Windows.Forms.PictureBox();
             this.bullet = new System.Windows.Forms.PictureBox();
             this.enemyThree = new System.Windows.Forms.PictureBox();
             this.enemyTwo = new System.Windows.Forms.PictureBox();
             this.enemyOne = new System.Windows.Forms.PictureBox();
-            this.txtHighScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bullet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyThree)).BeginInit();
@@ -59,6 +60,16 @@
             // 
             this.gameTimer.Interval = 20;
             this.gameTimer.Tick += new System.EventHandler(this.mainGameTimerEvent);
+            // 
+            // txtHighScore
+            // 
+            this.txtHighScore.BackColor = System.Drawing.Color.Transparent;
+            this.txtHighScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHighScore.Location = new System.Drawing.Point(12, 759);
+            this.txtHighScore.Name = "txtHighScore";
+            this.txtHighScore.Size = new System.Drawing.Size(265, 52);
+            this.txtHighScore.TabIndex = 7;
+            this.txtHighScore.Text = "High Score:";
             // 
             // player
             // 
@@ -120,16 +131,6 @@
             this.enemyOne.TabIndex = 0;
             this.enemyOne.TabStop = false;
             // 
-            // txtHighScore
-            // 
-            this.txtHighScore.BackColor = System.Drawing.Color.Transparent;
-            this.txtHighScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHighScore.Location = new System.Drawing.Point(12, 759);
-            this.txtHighScore.Name = "txtHighScore";
-            this.txtHighScore.Size = new System.Drawing.Size(265, 52);
-            this.txtHighScore.TabIndex = 7;
-            this.txtHighScore.Text = "High Score:";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -143,6 +144,7 @@
             this.Controls.Add(this.enemyTwo);
             this.Controls.Add(this.enemyOne);
             this.Controls.Add(this.txtScore);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Space Defenders";

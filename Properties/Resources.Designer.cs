@@ -93,6 +93,16 @@ namespace Space_Defenders.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap energy_bullet {
+            get {
+                object obj = ResourceManager.GetObject("energy_bullet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap f35_Player {
             get {
                 object obj = ResourceManager.GetObject("f35-Player", resourceCulture);
