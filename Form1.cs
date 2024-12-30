@@ -16,8 +16,9 @@ namespace Space_Defenders
         int score;
         int playerSpeed = 12;
         int highScore = 0;
-        int enemySpeed, enemyLeftSpeed = 5;
+        int enemySpeed, enemyLeftSpeed = 5, enemyLeftLimit = 697;
         int bulletSpeed;
+        int leftCountA = 0, rightCountA = 0, leftCountB = 0, rightCountB = 0, leftCountC = 0, rightCountC = 0;
         Random rnd = new Random();
 
         public Form1()
@@ -29,7 +30,6 @@ namespace Space_Defenders
         private void mainGameTimerEvent(object sender, EventArgs e)
         {
             txtScore.Text = score.ToString();
-
             enemyOne.Top += enemySpeed;
             enemyTwo.Top += enemySpeed;
             enemyThree.Top += enemySpeed;
@@ -52,6 +52,61 @@ namespace Space_Defenders
                 player.Left += playerSpeed;
             }
             // player movement logic ends
+
+            // enemy movement logic starts
+            if (hardcore)
+            {
+                // This will skew to one side eventually simulating the enemy making their mind
+                int leftOrRight = rnd.Next(0, 2) - leftCountA + rightCountA;
+                if (leftOrRight <= 0 && enemyOne.Left > 0) {
+                    leftCountA++; // A prior left movement makes subsequent movements more likely to be left
+                    rightCountA = 0; // Helps in skewing probability for the other side
+                    enemyOne.Left -= enemyLeftSpeed;
+                } else if (enemyOne.Left < enemyLeftLimit) {
+                    rightCountA++; // Similar to above but for right
+                    leftCountA = 0;
+                    enemyOne.Left += enemyLeftSpeed;
+                }
+
+                leftOrRight = rnd.Next(0, 2) - leftCountB + rightCountB;
+                if (leftOrRight <= 0 && enemyTwo.Left > 0)
+                {
+                    leftCountB++;
+                    rightCountB = 0;
+                    enemyTwo.Left -= enemyLeftSpeed;
+                }
+                else if (enemyTwo.Left < enemyLeftLimit)
+                {
+                    rightCountC++;
+                    leftCountC = 0;
+                    enemyTwo.Left += enemyLeftSpeed;
+                }
+
+                leftOrRight = rnd.Next(0, 2) - leftCountC + rightCountC;
+                if (leftOrRight <= 0 && enemyThree.Left > 0)
+                {
+                    leftCountC++;
+                    rightCountC = 0;
+                    enemyThree.Left -= enemyLeftSpeed;
+                }
+                else if (enemyThree.Left < enemyLeftLimit)
+                {
+                    rightCountC++;
+                    leftCountC = 0;
+                    enemyThree.Left += enemyLeftSpeed;
+                }
+
+                if (score % 3 == 0) { // Reset movement condition
+                    leftCountA = 0;
+                    rightCountA = 0;
+                    leftCountB = 0;
+                    rightCountB = 0;
+                    leftCountC = 0;
+                    rightCountC = 0;
+                }
+            }
+            // enemy movement logic ends
+
 
             if (shooting) {
                 bulletSpeed = 20;
@@ -96,27 +151,42 @@ namespace Space_Defenders
             if(score == 5)
             {
                 this.BackColor = Color.MediumSlateBlue; // 1st Transition to Space
-                enemySpeed = 10;
+                enemySpeed = 8;
             }
             if(score == 10)
             {
-                enemySpeed = 12;
-                playerSpeed = 15;
+                enemySpeed = 10;
+                playerSpeed = 15; // F35 afterburner
                 this.BackColor = Color.DarkSlateBlue; // Second Transition
+            }
+            if (score == 15)
+            {
+                enemySpeed = 12;
+                this.BackColor = Color.MidnightBlue; // Third transition
+
                 // Fighting SpaceShips!
                 enemyOne.Image = Properties.Resources.enemy_spaceship;
                 enemyTwo.Image = Properties.Resources.enemy_spaceship;
                 enemyThree.Image = Properties.Resources.enemy_spaceship;
+                enemyLeftLimit = 547;
 
-            }
-            if (score == 15)
-            {
-                enemySpeed = 15;
-                this.BackColor = Color.MidnightBlue; // Third transition
+                // Transition fix if enemy already spawned is at edge
+                if (enemyOne.Left >= enemyLeftLimit)
+                {
+                    enemyOne.Left = enemyLeftLimit;
+                }
+                if (enemyTwo.Left >= enemyLeftLimit)
+                {
+                    enemyTwo.Left = enemyLeftLimit;
+                }
+                if (enemyThree.Left >= enemyLeftLimit)
+                {
+                    enemyThree.Left = enemyLeftLimit;
+                }
             }
             if (score == 20)
             {
-                enemySpeed = 18;
+                enemySpeed = 15;
                 this.BackColor = Color.Black; // SPACE!
                 txtScore.ForeColor = Color.White; // Score Visibility
                 txtHighScore.ForeColor = Color.White; // HighScore Visibility
@@ -136,22 +206,6 @@ namespace Space_Defenders
                 goRight = true;
             }
         }
-
-        private void player_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void enemyTwo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void keyisup(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
@@ -183,10 +237,15 @@ namespace Space_Defenders
         {
             gameTimer.Start();
             enemySpeed = 6;
-
-            enemyOne.Left = rnd.Next(20, 600);
-            enemyTwo.Left = rnd.Next(20, 600);
-            enemyThree.Left = rnd.Next(20, 600);
+            if (enemyLeftLimit == 697) {
+                enemyOne.Left = rnd.Next(20, 600);
+                enemyTwo.Left = rnd.Next(20, 600);
+                enemyThree.Left = rnd.Next(20, 600);
+            } else {
+                enemyOne.Left = rnd.Next(20, enemyLeftLimit);
+                enemyTwo.Left = rnd.Next(20, enemyLeftLimit);
+                enemyThree.Left = rnd.Next(20, enemyLeftLimit);
+            }
 
             enemyOne.Top = rnd.Next(0, 200) * -1;
             enemyTwo.Top = rnd.Next(0, 500) * -1;
