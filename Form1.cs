@@ -181,12 +181,14 @@ namespace Space_Defenders
             }
             if (score == 20)
             {
-                enemySpeed = 15;
                 this.BackColor = Color.Black; // SPACE!
+                bulletSpeed = 25; // Plasma ammo more efficient in space!
+                enemySpeed = 15;
                 txtScore.ForeColor = Color.White; // Score Visibility
                 txtHighScore.ForeColor = Color.White; // HighScore Visibility
             }
             if (score == 30) { 
+                playerSpeed = 20;
                 hardcore = true; // Enemy will be able to move left to right soon
             }
         }
