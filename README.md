@@ -17,5 +17,5 @@ Shoot: Press the Spacebar to unleash your fighter’s normal bullets or advanced
 
 ## NOTE 
 - Don't resize the window
-- Windows may promt a security message, feel safe to disregard it. Rest assured I didn't code a virus ☺
+- Windows may promt a security message, click on *more info* then *run anyway*. Rest assured I didn't code a virus ☺
 ![Screenshot 2024-12-28 001709](https://github.com/user-attachments/assets/68814e5e-d180-4c19-984d-097a775d7977)
