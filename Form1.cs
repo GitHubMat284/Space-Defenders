@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Space_Defenders
 {
@@ -14,6 +15,8 @@ namespace Space_Defenders
         int bulletSpeed;
         int leftCountA = 0, rightCountA = 0, leftCountB = 0, rightCountB = 0, leftCountC = 0, rightCountC = 0;
         Random rnd = new Random();
+        SoundPlayer sound = new SoundPlayer("background_music.wav");
+
 
         public Form1()
         {
@@ -30,6 +33,7 @@ namespace Space_Defenders
 
             if(enemyOne.Top > 710 || enemyTwo.Top > 710 || enemyThree.Top > 710)
             {
+                sound.Stop();
                 if (score > highScore) { 
                     highScore = score;
                 }
@@ -181,12 +185,14 @@ namespace Space_Defenders
             }
             if (score == 20)
             {
-                enemySpeed = 15;
                 this.BackColor = Color.Black; // SPACE!
+                bulletSpeed = 25; // Plasma ammo more efficient in space!
+                enemySpeed = 15;
                 txtScore.ForeColor = Color.White; // Score Visibility
                 txtHighScore.ForeColor = Color.White; // HighScore Visibility
             }
             if (score == 30) { 
+                playerSpeed = 20;
                 hardcore = true; // Enemy will be able to move left to right soon
             }
         }
@@ -230,6 +236,8 @@ namespace Space_Defenders
 
         private void resetGame()
         {
+            sound.Play();
+
             gameTimer.Start();
             enemySpeed = 6;
             if (enemyLeftLimit == 697) {
