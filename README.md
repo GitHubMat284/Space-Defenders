@@ -1,6 +1,7 @@
 ## How To Run:
-1. Download the `.exe` from the [Releases](https://github.com/GitHubMat284/Space-Defenders/blob/main/bin/Debug/Space%20Defenders.exe) section.
-2. Double-click `Space Defenders.exe` to start playing!
+1. Download the `.exe` [HERE](https://github.com/GitHubMat284/Space-Defenders/blob/main/bin/Debug/Space%20Defenders.exe) section.
+2. Download the game music in the same directory [HERE](https://github.com/GitHubMat284/Space-Defenders/blob/main/bin/Debug/background_music.wav).
+3. Double-click `Space Defenders.exe` to start playing!
 
 ## Game Briefing
 
